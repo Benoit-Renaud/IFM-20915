@@ -19,11 +19,7 @@
 		}
 		elseif (isset($_POST["btnInterpretez"]))
 		{
-			$isBold = isset($_POST["cbBold"]) ? " bold;" : "";
-			$isIta = isset($_POST["cbIta"]) ? "italic;" : "";
-			$isUnder = isset($_POST["cbUnder"]) ? ": underline;" : "";
-		
-			echo "<p style='color:$couleur;font-weight:{$isBold};font-style:{$isIta};text-decoration{$isUnder};font-size:{$fontSize}px;'>
+			echo "<p style='color:$couleur;font-weight:{$isBold};font-style:{$isIta};text-decoration:{$isUnder};font-size:{$fontSize}px;'>
 				$monTxt
 			</p>";
 		}

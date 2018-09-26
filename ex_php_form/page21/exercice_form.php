@@ -40,11 +40,7 @@
 		}
 		elseif (isset($_GET["btnInterpretez"]))
 		{
-			$isBold = isset($_GET["cbBold"]) ? " bold;" : "";
-			$isIta = isset($_GET["cbIta"]) ? "italic;" : "";
-			$isUnder = isset($_GET["cbUnder"]) ? ": underline;" : "";
-		
-			echo "<p style='color:$couleur;font-weight:{$isBold};font-style:{$isIta};text-decoration{$isUnder};font-size:{$fontSize}px;'>
+			echo "<p style='color:$couleur;font-weight:{$isBold};font-style:{$isIta};text-decoration:{$isUnder};font-size:{$fontSize}px;'>
 				$monTxt
 			</p>";
 		}
