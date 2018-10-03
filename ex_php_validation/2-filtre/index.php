@@ -21,7 +21,7 @@
 		
 		function IsIntBetweenMinAndMax($var, $min, $max)
 		{
-			if (filter_var($var, FILTER_VALIDATE_INT) === 0 || !filter_var($var, FILTER_VALIDATE_INT) === false) 
+			if (filter_var($var, FILTER_VALIDATE_INT) !== false)
 			{
 				return $var >= $min && $var <= $max;
 			}
