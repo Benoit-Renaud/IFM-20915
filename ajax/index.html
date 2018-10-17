@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+	<script>
+		function rechercheEtudiant(str) 
+		{
+			//Création de l'objet pour la requête
+			var xmlhttp = new XMLHttpRequest();
+			
+			//Traitement de la requête lorsque la réponse est reçu
+			xmlhttp.onreadystatechange = function() 
+			{
+				//readyState == 4: requête terminée et la réponse est prête
+				//status == 200: "OK"
+				if (this.readyState == 4 && this.status == 200)
+				{
+					document.getElementById("divResult").innerHTML = this.responseText;
+				}
+			};
+			
+			//Initialiser la requête
+			xmlhttp.open("GET", "recherche.php?nom=" + str, true);
+			
+			//Envoyer la requête
+			xmlhttp.send();
+		}
+	</script>
+</head>
+<body onload="rechercheEtudiant('');">
+	Nom: <input id="txtID" type="text" onkeyup="rechercheEtudiant(txtID.value)" />
+	<button type="button" onclick="rechercheEtudiant(txtID.value)">Recherche Asynchrone</button>
+	
+	<div id="divResult" style="margin:12px">
+		
+	</div>
+</body>
+</html>
+
